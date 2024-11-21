@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="b.css">
+</head>
+
+<body>
+
+    <h1 class="heading">BUBLES GAMES</h1>
+    <h4 class="heading" style="color: rgb(185, 209, 185);">Guesss Bubles</h1>
+    <div id="main">
+        <div id="panel">
+            <div id="tpanel">
+                <div class="elam">
+                    <h3>Hit</h4>
+                        <div id="hit" class="box">5</div>
+                </div>
+                <div class="elam">
+                    <h3>Timer</h4>
+                        <div id="Timerval" class="box">60</div>
+                </div>
+                <div class="elam">
+                    <h3>score</h4>
+                        <div id="score" class="box">0</div>
+                </div>
+
+            </div>
+
+            <div id="bpanel">
+                <div class="buble">5</div>
+
+            </div><br>
+            
+        </div>
+    </div>
+
+    <script>
+        var Timer = 20;
+        var score = 0;
+        var hitnum = 0;
+        function incresescore() {
+            score += 10;
+            document.querySelector("#score").textContent = score;
+        }
+        function hitval() {
+
+            hitnum = Math.floor(Math.random() * 10);
+            document.querySelector("#hit").textContent = hitnum;
+        }
+        function makebulb() {
+
+            var clutter = "";
+            for (var i = 1; i <= 108; i++) {
+                var rn = Math.floor(Math.random() * 10)
+                clutter += `<div class="buble"> ${rn}</div>`
+            }
+            document.querySelector("#bpanel").innerHTML = clutter;
+
+        }
+        function runtimer() {
+            var timeint = setInterval(function () {
+                if (Timer > 0) {
+                    Timer--;
+                    document.querySelector("#Timerval").innerHTML = Timer;
+                } else {
+                    clearInterval(timeint)
+                    document.querySelector("#bpanel").innerHTML = `<h1> Game Over </h1>`;
+                }
+            }, 1000);
+        }
+        document.querySelector("#bpanel")
+        addEventListener("click", function (dets) {
+            var clicknumber = (Number(dets.target.textContent));
+            if (clicknumber === hitnum) {
+                incresescore();
+                makebulb();
+                hitval();
+            }
+        })
+
+
+
+        runtimer();
+        makebulb();
+        hitval();
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Gilroy;
+}
+html,body{
+    width: 100%;
+    height:100%;
+}
+.heading{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color :rgb(47,77,73); display: flex;
+    color: white;
+}
+.bottom{
+    color: white;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+}
+#main{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(92, 131, 118);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+#panel{
+    width: 70%;
+    height: 70%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+#tpanel{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(47,77,73);
+    display: flex;
+    padding:0px 30%;
+align-items: center;
+justify-content: space-between;
+color: aliceblue;
+}
+.elam{
+align-items: center;
+display: flex;
+gap: 20%;
+
+}
+.box{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-weight:  bold;
+    font-size: 25px;
+
+}
+#bpanel{
+width:100%;
+ height:calc(100% - 100px);
+ padding: 20px;
+ display: flex;
+ gap: 10px;
+ flex-wrap: wrap;
+ align-items: center;
+ justify-content: center;
+  
+}
+.buble{
+    background-color: rgb(47, 77, 73);
+    width: 40px;
+    height: 40px;
+    border-radius:50%;
+     color: aliceblue;
+     align-items: center;
+     display: flex;
+     justify-content: center;
+}
+.buble:hover{
+ background-color: rgb(46, 117, 108);
+}
